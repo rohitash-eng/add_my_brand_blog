@@ -1,0 +1,9 @@
+@include('elements.head')
+    @include('elements.header')
+        @include('elements.home_page_banner')
+        @yield('content')
+    @include('elements.footer')
+</div>
+</body>
+@extends('elements.js_path')
+</html>

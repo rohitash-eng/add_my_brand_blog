@@ -294,4 +294,5 @@
       </div>
    </section>
    <div class="clearfix"></div>
+   @include("elements.popups.login_signup")   
 @endsection

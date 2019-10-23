@@ -13,11 +13,15 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('#styleOptions').styleSwitcher();
+    $(".loadClDev").click(function(){alert("come here")
+        //$("#popupContent").load("http://localhost/blog/public/register");
+        //$('#signup').modal('show'); // AJAX LOAD IN DIV ROHITASH
+    });
 });
 function openRightMenu(){
     document.getElementById("rightMenu").style.display="block";
 }
 function closeRightMenu(){
     document.getElementById("rightMenu").style.display="none";
-} 
+}
 </script>

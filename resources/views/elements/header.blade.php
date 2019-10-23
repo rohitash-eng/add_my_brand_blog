@@ -75,9 +75,16 @@
                 <li><a href="blog.html">Blog</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                <li><a href="login.html"><i class="fa fa-pencil" aria-hidden="true"></i>SignIn</a></li>
-                <li><a href="pricing.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Pricing</a></li>
-                <li class="left-br"><a href="javascript:void(0)" data-toggle="modal" data-target="#signup" class="signin">Sign In Now</a></li>
+            @if (!Auth::check())
+            <li><a href="{{ route('login') }}"><i class="fa fa-pencil" aria-hidden="true"></i>Login</a></li>
+            <li><a href="{{ route('register') }}"><i class="fa fa-pencil" aria-hidden="true"></i>Register</a></li>
+            @endif
+            @if (Auth::check())
+            <li class="left-br"><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="signin">Logout</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            @endif
             </ul>
         </div>
     </div>
